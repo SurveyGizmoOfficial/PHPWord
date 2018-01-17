@@ -315,10 +315,11 @@ class Chart extends AbstractPart
 
         if (isset($this->options['axes'])) {
             $xmlWriter->writeElementBlock('c:delete', 'val', 0);
-            $xmlWriter->writeElementBlock('c:majorTickMark', 'val', 'in'); // SG edit: switched from none to inside
+            $xmlWriter->writeElementBlock('c:majorTickMark', 'val', 'in'); // SG edit: switched from none to in
             $xmlWriter->writeElementBlock('c:minorTickMark', 'val', 'none');
             $xmlWriter->writeElementBlock('c:tickLblPos', 'val', 'nextTo'); // nextTo // SG edit: switched from none to nextTo
             $xmlWriter->writeElementBlock('c:crosses', 'val', 'autoZero');
+            $xmlWriter->writeElementBlock('c:tickLblPos', 'val', 'low');
         }
         if (isset($this->options['radar'])) {
             $xmlWriter->writeElement('c:majorGridlines');
